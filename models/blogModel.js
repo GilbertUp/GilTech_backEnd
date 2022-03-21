@@ -5,17 +5,18 @@ const blogSchema=new mongoose.Schema({
         required:[true,"this field is required"]
         
     },
-    description:{
-        type:String,
-        required:[true,"this field is required"],
-        trim:true
-    }, body:{
+    // description:{
+    //     type:String,
+    //     required:[true,"this field is required"],
+    //     trim:true
+    // }, 
+    body:{
         type:String,
         required:[true,"this field is required"]
         
     }, photo:{
         type:String,
-        required:[true,"this field is required"]
+        //required:[true,"this field is required"]
         
     },
     comments:[{
