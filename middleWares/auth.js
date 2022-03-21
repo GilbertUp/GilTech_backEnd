@@ -19,7 +19,7 @@ export const protect = async (req, res, next) => {
         // Check if User exist
         const freshUser = await userModel.findById(decoded._id)
         if (!freshUser) {
-            return res.status(401).json({ message: 'User not found' })
+            return res.status(401).json({ message: 'password or email is not valid' })
         }
         req.user = freshUser
         

@@ -170,10 +170,10 @@ export const login = async (req, res) => {
                     role: user.role
                 });
             } else {
-                res.status(400).json({ Error: "Invalid Password!!" });
+                res.status(400).json({ Error: "Invalid Password or email!!" });
             }
         } else {
-            res.status(404).json({ Error: "User does not exist!!" });
+            res.status(404).json({ Error: "Invalid password or email" });
         }
     } catch (error) {
         res.status(500).json({ Error: "Internal error" })
