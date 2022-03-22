@@ -6,6 +6,8 @@ import blogRouter from "./routes/blogRoutes.js"
 import commentRouter from "./routes/commentRoutes.js"
 import { login } from './controllers/userController.js';
 const app = express();
+import cors from 'cors';
+app.use(cors())
 app.use(express.json());
 
 

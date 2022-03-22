@@ -166,15 +166,16 @@ export const login = async (req, res) => {
                 //res.status(200).json({ Message: "User successfully logged in!!" });
                 res.status(200).json({
                     message: "User logged in successfully",
-                    token: jwt.sign({ email: user.email, role:user.role,fullName: user.name, _id: user._id }, 'giltech')
+                    token: jwt.sign({ email: user.email, role:user.role,fullName: user.name, _id: user._id }, 'giltech'),
+                    role: user.role
                 });
             } else {
-                res.status(400).json({ Error: "Invalid Password!!" });
+                res.status(400).json({ Error: "Invalid Password or email!!" });
             }
         } else {
-            res.status(401).json({ Error: "User does not exist!!" });
+            res.status(404).json({ Error: "Invalid password or email" });
         }
     } catch (error) {
-        res.status(404).json({ Error: "Internal error" })
+        res.status(500).json({ Error: "Internal error" })
     }
 }
