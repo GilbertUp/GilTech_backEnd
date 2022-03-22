@@ -12,7 +12,7 @@ const signupValidator = (req, res, next) => {
         return res.json({ Error: 'full name required!' });
     }
     if (name.length < 5) {
-        return res.json({ Name: 'Enter at least 5 characters!' });
+        return res.json({ error: 'Enter at least 5 characters!' });
     }
     if (!pwd) {
         return res.json({ Error: 'Password required!' });
