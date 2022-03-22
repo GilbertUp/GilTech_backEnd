@@ -1,11 +1,13 @@
-const express=require('express');
-const bodyParser=require('body-parser');
-const { default: app } = require('..');
-const upload = require('../multer');
-const app=express();
-const upload=requare('./multer')
-const cloudinaly =require ('./cloudinary')
-const fs=requare ('fs');
+import  express  from "express"
+import upload from "../multer.js"
+
+
+
+
+// // const app=express();
+// // const upload=requare('./multer')
+// // const cloudinaly =require ('./cloudinary')
+// // const fs=requare ('fs');
 app.use(bodyParser.urlencoded)({
     extended:false
 })

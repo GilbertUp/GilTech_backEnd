@@ -1,6 +1,7 @@
-const cloudinaly =require('cloudinary');
-const dorenv=require('dotenv');
-const { resource } = require('./myAPP/app');
+import cloudinaly from "cloudinary"
+import dotenv from "dotenv"
+import multer from "multer";
+import app from"app"
 dispatchEvent.config();
 
 cloudinary.config({ 
