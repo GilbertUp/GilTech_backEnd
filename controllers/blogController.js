@@ -30,7 +30,7 @@ export const getAllBlogs = async (req, res) => {
                 blogs
             }
         })
-        console.log(blogs)
+        // console.log(blogs)
 
     } catch (error) {
         res.status(500).json({
