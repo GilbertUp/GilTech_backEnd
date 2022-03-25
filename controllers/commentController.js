@@ -1,11 +1,12 @@
 import Comment from "../models/commentModel.js";
 import Blog from "../models/blogModel.js";
 export const createComment = async (req, res) => {
+  
     try {
         const newComment = await Comment.create({
             postId: req.params.id,
-            name: req.body.name,
-            email: req.body.email,
+            name: req.user.fullName,
+            email: req.user.email,
             comment: req.body.comment
 
         })
@@ -21,7 +22,7 @@ export const createComment = async (req, res) => {
     } catch (error) {
         res.status(400).json({
             message: "An error occured try to fix it",
-            data: { error }
+            error: error.stack
         })
     }
 }

@@ -1,6 +1,8 @@
 import Blog from "../models/blogModel.js";
+import { photo } from "../photo/multer.js";
 export const createBlog = async (req, res) => {
     try {
+        req.body.photo = await photo(req)
         const newBlog = await Blog.create(req.body)
         res.status(201).json({
             status: "success",
@@ -30,7 +32,7 @@ export const getAllBlogs = async (req, res) => {
                 blogs
             }
         })
-        console.log(blogs)
+        // console.log(blogs)
 
     } catch (error) {
         res.status(500).json({
