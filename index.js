@@ -5,6 +5,8 @@ import messageRouter from "./routes/messageRoutes.js"
 import blogRouter from "./routes/blogRoutes.js"
 import commentRouter from "./routes/commentRoutes.js"
 import { login } from './controllers/userController.js';
+import router from './photo/add.bog.route.js';
+
 const app = express();
 import cors from 'cors';
 app.use(cors())
@@ -18,6 +20,7 @@ app.use("/api/v1/blogs",blogRouter)
 app.use("/api/v1/blogs",commentRouter)
 app.use("/api/v1/messages",messageRouter)
 app.use("/api/v1/users",login)
+app.use("/api/v1/addBlog",router)
 
 export default app
  
