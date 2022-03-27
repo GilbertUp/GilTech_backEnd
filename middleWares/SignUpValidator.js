@@ -33,7 +33,7 @@ const signupValidator = (req, res, next) => {
         }
     }
     if (pwd.length < 8) {
-        return res.json({ Password: 'Enter at least 8 characters' });
+        return res.json({ Error: 'Enter at least 8 characters' });
     }
     
     User.confirmPassword = undefined
