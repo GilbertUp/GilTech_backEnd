@@ -5,6 +5,7 @@ export const createMessage = async (req, res) => {
         const newMessage = await Message.create(req.body)
         res.status(201).json({
             status: "success",
+            results: newMessage.length,
             data: {
                 newMessage
             }
